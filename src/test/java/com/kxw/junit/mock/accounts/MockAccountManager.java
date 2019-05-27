@@ -1,8 +1,5 @@
 package com.kxw.junit.mock.accounts;
 
-import com.kxw.junit.mock.accounts.Account;
-import com.kxw.junit.mock.accounts.AccountManager;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +23,11 @@ public class MockAccountManager implements AccountManager {
 
     @Override
     public void updateAccount(Account account) {
-
+        for (Map.Entry<String, Account> ac : accounts.entrySet()) {
+            if (ac.getValue().getAccountId().equalsIgnoreCase(account.getAccountId())) {
+                accounts.put(ac.getKey(), account);
+            }
+        }
     }
+
 }

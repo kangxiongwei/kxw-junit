@@ -27,4 +27,8 @@ public class Account {
         return this.balance;
     }
 
+    public String getAccountId() {
+        return accountId;
+    }
+
 }

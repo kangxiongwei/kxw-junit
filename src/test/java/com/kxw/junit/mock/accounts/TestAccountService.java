@@ -27,7 +27,9 @@ public class TestAccountService {
         mockAccountManager.addAccount("2", beneficiaryAccount);
         AccountService accountService = new AccountService();
         accountService.setAccountManager(mockAccountManager);
+
         accountService.transfer("1", "2", 50);
+
         assertEquals(150, senderAccount.getBalance());
         assertEquals(150, beneficiaryAccount.getBalance());
     }
